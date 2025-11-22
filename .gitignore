@@ -1,0 +1,18 @@
+# Ignorar todo por defecto
+*
+
+# Excepciones: permitir solo estas carpetas
+!.gitignore
+!/Qmk-Lily58-Dvorak/
+!nvim/
+!kitty/
+!hypr/
+
+# Y permitir todo el contenido dentro de ellas
+!/Qmk-Lily58-Dvorak/**
+!nvim/**
+!kitty/**
+!hypr/**
+
+nvim/lua/.env
+nvim/test.*
