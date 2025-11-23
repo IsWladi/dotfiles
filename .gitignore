@@ -7,12 +7,14 @@
 !nvim/
 !kitty/
 !hypr/
+!swappy/
 
 # Y permitir todo el contenido dentro de ellas
 !/Qmk-Lily58-Dvorak/**
 !nvim/**
 !kitty/**
 !hypr/**
+!swappy/**
 
 nvim/lua/.env
 nvim/test.*

@@ -1,0 +1,4 @@
+[Default]
+save_dir=$HOME/Pictures/Screenshots
+save_filename_format=edit-screenshot-%Y%m%d-%H%M%S.png
+paint_mode=arrow
