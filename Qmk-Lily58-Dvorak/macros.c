@@ -14,7 +14,7 @@ switch (keycode) {
         }
         return false;
 
-    case TOGGLE_FS_I3: //Macro: Toggle max o min en i3
+    case TOGGLE_FS_I3: //Macro: Toggle max o min en WM
         if (record->event.pressed){
             register_code(KC_LGUI);
             tap_code(KC_F);
@@ -22,7 +22,7 @@ switch (keycode) {
         }
         return false;
 
-    case WLEFT_I3: //Macro mover a ventana izquierda en i3
+    case WLEFT_I3: //Macro mover a ventana izquierda en WM
         if (record->event.pressed){
             register_code(KC_LGUI);
             tap_code(KC_LEFT);
@@ -30,7 +30,7 @@ switch (keycode) {
         }
         return false;
 
-    case WRIGHT_I3: //Macro mover a ventana derecha en i3
+    case WRIGHT_I3: //Macro mover a ventana derecha en WM
         if (record->event.pressed){
             register_code(KC_LGUI);
             tap_code(KC_RIGHT);
@@ -38,7 +38,23 @@ switch (keycode) {
         }
         return false;
 
-    case WT: //Macro abrir terminal en i3
+    case WUP_I3: //Macro mover a ventana arriba en WM
+        if (record->event.pressed){
+            register_code(KC_LGUI);
+            tap_code(KC_UP);
+            unregister_code(KC_LGUI);
+        }
+        return false;
+
+    case WDOWN_I3: //Macro mover a ventana abajo en WM
+        if (record->event.pressed){
+            register_code(KC_LGUI);
+            tap_code(KC_DOWN);
+            unregister_code(KC_LGUI);
+        }
+        return false;
+
+    case WT: //Macro abrir terminal en WM
         if (record->event.pressed) {
             register_code(KC_LGUI);
             tap_code(KC_ENTER);

@@ -42,6 +42,8 @@ enum custom_keycodes {
   TOGGLE_FS_I3,
   WLEFT_I3,
   WRIGHT_I3,
+  WUP_I3,
+  WDOWN_I3,
   WT,
   CLOSE_I3,
   COPY_WIN,
@@ -125,11 +127,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_QWERTY] = LAYOUT( \
 
-    KC_DEL,         LGUI(KC_1),     LGUI(KC_2),     LGUI(KC_3),       LGUI(KC_4),    LGUI(KC_5),                    KC_6,    KC_7,    KC_8,    KC_9,         KC_0,    KC_PSCR, \
+    KC_DEL,         LGUI(KC_1),     LGUI(KC_2),     LGUI(KC_3),       LGUI(KC_4),    LGUI(KC_5),                    LGUI(KC_6),    LGUI(KC_7),   LGUI(KC_8),   LGUI(KC_9), XXXXXXX, KC_PSCR, \
     MAYUS,          TD(TD_TILDE),   TD(TD_MINT),    TD(TD_BIGT),      KC_P,    KC_Y,                                  KC_F,    KC_G,    KC_C,    KC_H,         KC_L,    LSFT_T(KC_LBRC), \
     LSFT_T(KC_TAB), KC_A,           KC_O,           KC_E, LT(_NUMPAD, KC_U),   KC_I,                                  KC_D,    KC_R,    KC_T,    TD(TD_NN),    KC_S,    KC_BSPC, \
     XXXXXXX,        TD(TD_DOTS),    KC_Q,           KC_J,             KC_K,    KC_X, TD(TD_LEFT_K),   TD(TD_RIGHT_K), KC_B,    KC_M,    KC_W,    KC_V,         KC_Z,    KC_RGUI, \
-                                          XXXXXXX, XXXXXXX, LT(_LOWER,KC_SPC),   LALT_T(KC_ESC),         LCTL_T(KC_COMM), LT(_HIGHER,KC_ENT), TD(TD_CORCHETES_K), XXXXXXX \
+                                          XXXXXXX, KC_LGUI, LT(_LOWER,KC_SPC),   LALT_T(KC_ESC),         LCTL_T(KC_COMM), LT(_HIGHER,KC_ENT), TD(TD_CORCHETES_K), XXXXXXX \
                        ),
 
     [_LOWER] = LAYOUT( \
@@ -142,7 +144,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
     [_HIGHER] = LAYOUT( \
-    XXXXXXX, XXXXXXX,     XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC, \
+    XXXXXXX, XXXXXXX,     XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,                             XXXXXXX, XXXXXXX, WUP_I3, WDOWN_I3, XXXXXXX, KC_BSPC, \
     XXXXXXX, KC_HOME,     KC_PGUP,     KC_PSCR,      XXXXXXX,      XXXXXXX,                             ROFI,    TOGGLE_FS_I3,     WLEFT_I3,     WRIGHT_I3,   WT, CLOSE_I3, \
     XXXXXXX, TD(TD_SIM8), TD(TD_SIM9), TD(TD_SIM10), TD(TD_EXCLA), TD(TD_SIM12),                        XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, \
     XXXXXXX, XXXXXXX,     XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,       XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \

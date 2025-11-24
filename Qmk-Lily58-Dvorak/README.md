@@ -18,8 +18,7 @@ _Mejorar la ergonomia de trabajo integrando neovim con layout Dvorak en un split
 
 - QMK Firmware 0.23.5
 - Lily58 pro
-- Linux Mint
-- Kitty (no es necesario, pero es el terminal que uso actualmente)
+- Docker (usamos Docker para no tener problemas de dependencias)
 
 ## Referencia
 
@@ -32,7 +31,7 @@ _Mejorar la ergonomia de trabajo integrando neovim con layout Dvorak en un split
    ```bash
    ./update_lily58_kb.bash
    ```
-3. Flashear el firmware en el teclado
+3. Flashear el firmware en el teclado (ejecutarlo 1 vez por cada lado del teclado)
    ```bash
    ./keyboard_flash.bash
    ```
