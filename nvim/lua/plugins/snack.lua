@@ -8,8 +8,7 @@ return {
 		local Snacks = require("snacks")
 		Snacks.setup({
 			picker = { enabled = true },
-			bigfile = { enabled = true },
-			quickfile = { enabled = true },
+      quickfile = { enabled = true },
 			image = { enabled = true },
 			dim = { enabled = true },
 			scroll = { enabled = true },
