@@ -25,6 +25,7 @@ return {
 					"java",
 					"csv",
 					"rust",
+          "nix",
 				},
 
 				-- Install parsers synchronously (only applied to `ensure_installed`)

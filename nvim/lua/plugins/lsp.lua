@@ -24,6 +24,7 @@ return {
 				"html",
 				"rust_analyzer",
 				"jdtls",
+        "nil_ls",
 			}
 
 			mlsp.setup({
