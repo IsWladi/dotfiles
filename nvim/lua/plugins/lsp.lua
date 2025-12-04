@@ -57,7 +57,7 @@ return {
 					vim.lsp.buf.implementation()
 				end, { buffer = bufnr, remap = false, desc = implementation })
 				vim.keymap.set("n", "<CR>e", function()
-					vim.diagnostic.goto_next()
+					vim.diagnostic.goto_next({ float = false })
 				end, { buffer = bufnr, remap = false, desc = diagnostic })
 				vim.keymap.set("n", "<CR>r", function()
 					vim.lsp.buf.rename()

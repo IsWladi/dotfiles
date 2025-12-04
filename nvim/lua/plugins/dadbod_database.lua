@@ -11,7 +11,7 @@ return {
 		"DBUIFindBuffer",
 	},
 	keys = {
-		{ "<leader>bd", "<cmd>DBUIToggle<cr>", desc = "dadbod-ui: Toggle DBUI" },
+		{ "<leader>bd", ":tab DBUIToggle<cr>", desc = "dadbod-ui: Toggle DBUI" },
 	},
 	config = function()
 		-- Your DBUI configuration

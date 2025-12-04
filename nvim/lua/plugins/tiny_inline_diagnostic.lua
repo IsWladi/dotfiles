@@ -10,6 +10,11 @@ return {
 				},
 				show_source = {
 					enabled = true,
+					if_many = true,
+				},
+				overflow = {
+					mode = "wrap", -- "wrap": split into lines, "none": no truncation, "oneline": keep single line
+					padding = 0, -- Extra characters to trigger wrapping earlier
 				},
 			},
 		})

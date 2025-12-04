@@ -8,7 +8,7 @@ return {
 		local Snacks = require("snacks")
 		Snacks.setup({
 			picker = { enabled = true },
-      quickfile = { enabled = true },
+			quickfile = { enabled = true },
 			image = { enabled = true },
 			dim = { enabled = true },
 			scroll = { enabled = true },
@@ -64,6 +64,13 @@ return {
 			end,
 			desc = "Visual selection or word",
 			mode = { "n", "x" },
+		},
+		{
+			"<CR>s",
+			function()
+				Snacks.picker.lsp_symbols()
+			end,
+			desc = "LSP Document Symbols",
 		},
 	},
 }
