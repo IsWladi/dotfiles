@@ -37,7 +37,8 @@ return {
 			-- on_attach + keymaps ------------
 			local function my_on_attach(_, bufnr)
 				local hover = "[LSP] Hover"
-				local diagnostic = "[LSP] Diagnostic"
+				local diagnostic_next = "[LSP] Diagnostic next"
+				local diagnostic_prev = "[LSP] Diagnostic previus"
 				local definition = "[LSP] Definition"
 				local type_definition = "[LSP] Type Definition"
 				local implementation = "[LSP] Implementation"
@@ -58,7 +59,10 @@ return {
 				end, { buffer = bufnr, remap = false, desc = implementation })
 				vim.keymap.set("n", "<CR>e", function()
 					vim.diagnostic.goto_next({ float = false })
-				end, { buffer = bufnr, remap = false, desc = diagnostic })
+				end, { buffer = bufnr, remap = false, desc = diagnostic_next })
+				vim.keymap.set("n", "<CR>E", function()
+					vim.diagnostic.goto_prev({ float = false })
+				end, { buffer = bufnr, remap = false, desc = diagnostic_prev })
 				vim.keymap.set("n", "<CR>r", function()
 					vim.lsp.buf.rename()
 				end, { buffer = bufnr, remap = false, desc = rename })
