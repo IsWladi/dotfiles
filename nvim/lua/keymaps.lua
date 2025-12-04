@@ -37,6 +37,20 @@ map("n", "<leader><leader>o", "<cmd>wa<CR>", { desc = "[no plugin] Save all buff
 map("n", "<leader>n", "<cmd>bnext<CR>", { desc = "[no plugin] Go to next buffer" })
 map("n", "<leader>t", "<cmd>bprevious<CR>", { desc = "[no plugin] Go to previous buffer" })
 
+-- window management
+-- rezise
+vim.keymap.set("n", "<M-n>", ":resize +2<CR>", { silent = true })
+vim.keymap.set("n", "<M-t>", ":resize -2<CR>", { silent = true })
+vim.keymap.set("n", "<M-r>", ":vertical resize -2<CR>", { silent = true })
+vim.keymap.set("n", "<M-s>", ":vertical resize +2<CR>", { silent = true })
+
+-- move between windows
+
+vim.keymap.set("n", "<leader><leader>r", "<C-w>h", { silent = true })
+vim.keymap.set("n", "<leader><leader>s", "<C-w>l", { silent = true })
+vim.keymap.set("n", "<leader><leader>n", "<C-w>k", { silent = true })
+vim.keymap.set("n", "<leader><leader>t", "<C-w>j", { silent = true })
+
 --para normal mode y visual mode, sustituciones con very very magic y posición de cursor automatica
 map("n", "<leader>/", [[:%s/\v//gc<Left><Left><Left><Left>]], { desc = "[no plugin] Substitute (very magic, confirm)" })
 map(

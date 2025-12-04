@@ -27,6 +27,14 @@ local home = os.getenv("HOME") or os.getenv("USERPROFILE")
 opt.undodir = home .. "/.vim/undodir"
 vim.opt.laststatus = 3 -- recomendacion plugin Avante.nvim
 
+-- Deactivate fold in dbout filetype (used by vim-dadbod-ui)
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "dbout",
+	callback = function()
+		vim.opt_local.foldenable = false
+	end,
+})
+
 --auto comandos
 vim.cmd("autocmd BufReadPost * lua require('wrap').set_wrap()") -- auto wrap
 

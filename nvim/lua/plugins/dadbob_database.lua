@@ -10,12 +10,15 @@ return {
 		"DBUIAddConnection",
 		"DBUIFindBuffer",
 	},
+	keys = {
+		{ "<leader>bd", "<cmd>DBUIToggle<cr>", desc = "dadbod-ui: Toggle DBUI" },
+	},
 	config = function()
 		-- Your DBUI configuration
 		vim.g.db_ui_use_nerd_fonts = 1
 
 		vim.g.dbs = {
-			{ name = "proyex_local_api_mul_tablas", url = vim.fn.getenv("PROYEX_DB") },
+			{ name = "local_proyex_api_mul_tablas", url = vim.fn.getenv("PROYEX_DB") },
 		}
 	end,
 }
