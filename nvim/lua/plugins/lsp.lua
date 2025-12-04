@@ -14,17 +14,13 @@ return {
 			local mlsp = require("mason-lspconfig")
 
 			local servers = {
-				"lua_ls",
 				"ts_ls",
-				"pyright",
 				"tailwindcss",
 				"jsonls",
 				"dockerls",
 				"yamlls",
 				"html",
-				"rust_analyzer",
 				"jdtls",
-        "nil_ls",
 			}
 
 			mlsp.setup({
@@ -79,13 +75,58 @@ return {
 			})
 
 			-- overrides
-			vim.lsp.config("lua_ls", {
-				settings = { Lua = { diagnostics = { globals = { "vim" } } } },
-			})
-
 			vim.lsp.config("tailwindcss", {
 				filetypes = { "css" },
 			})
+
+			-- nix managed
+
+			vim.lsp.config("lua_ls", {
+				cmd = { "lua-language-server" },
+				settings = { Lua = { diagnostics = { globals = { "vim" } } } },
+			})
+
+			vim.lsp.config("nil_ls", {
+				cmd = { "nil" }, -- usa el binario nativo de Nix
+				settings = {
+					["nil"] = {
+						formatting = {
+							command = { "nixpkgs-fmt" }, -- opcional si usas nixpkgs-fmt
+						},
+					},
+				},
+			})
+
+			vim.lsp.config("pyright", {
+				cmd = { "pyright-langserver", "--stdio" },
+				capabilities = require("blink.cmp").get_lsp_capabilities(),
+				settings = {
+					python = {
+						analysis = {
+							typeCheckingMode = "basic",
+						},
+					},
+				},
+			})
+			vim.lsp.config("rust_analyzer", {
+				cmd = { "rust-analyzer" },
+				capabilities = require("blink.cmp").get_lsp_capabilities(),
+				settings = {
+					["rust-analyzer"] = {
+						cargo = { allFeatures = true },
+						checkOnSave = true,
+						check = {
+							command = "clippy",
+						},
+					},
+				},
+			})
+
+			-- enable servers manually managed by nix
+			vim.lsp.enable("lua_ls")
+			vim.lsp.enable("nil_ls")
+			vim.lsp.enable("pyright")
+			vim.lsp.enable("rust_analyzer")
 
 			vim.diagnostic.config({
 				virtual_text = true,
