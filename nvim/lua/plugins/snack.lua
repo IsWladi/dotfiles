@@ -72,5 +72,20 @@ return {
 			end,
 			desc = "LSP Document Symbols",
 		},
+		{
+			"<CR><CR>",
+			function()
+				Snacks.picker.diagnostics_buffer()
+			end,
+			desc = "LSP Diagnostics Buffer",
+		},
+
+		{
+			"<CR>h",
+			function()
+				Snacks.picker.help()
+			end,
+			desc = "Help Pages",
+		},
 	},
 }
