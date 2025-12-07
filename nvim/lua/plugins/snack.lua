@@ -11,7 +11,7 @@ return {
 			quickfile = { enabled = true },
 			image = { enabled = true },
 			dim = { enabled = true },
-			scroll = { enabled = true },
+			indent = { enabled = true },
 		})
 
 		-- Dim toggle

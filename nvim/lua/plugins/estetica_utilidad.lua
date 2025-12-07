@@ -1,13 +1,4 @@
 return {
-
-	--identacion
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("ibl").setup()
-		end,
-	},
-
 	--Plug para ver que lineas tienen cambios en git
 	{ "mhinz/vim-signify" },
 
