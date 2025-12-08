@@ -5,7 +5,7 @@ return {
 		build = ":TSUpdate",
 		event = "VeryLazy",
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter-refactor",
+			"nvim-treesitter/nvim-treesitter-context",
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		config = function()
@@ -25,7 +25,7 @@ return {
 					"java",
 					"csv",
 					"rust",
-          "nix",
+					"nix",
 				},
 
 				-- Install parsers synchronously (only applied to `ensure_installed`)
