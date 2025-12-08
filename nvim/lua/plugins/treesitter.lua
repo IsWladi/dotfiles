@@ -51,8 +51,8 @@ return {
 						lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
 						keymaps = {
 							-- You can use the capture groups defined in textobjects.scm
-							["ac"] = "@class.outer",
-							["ic"] = "@class.inner",
+							["ao"] = "@class.outer",
+							["io"] = "@class.inner",
 
 							["af"] = "@function.outer",
 							["if"] = "@function.inner",
@@ -60,8 +60,8 @@ return {
 							["al"] = "@loop.outer",
 							["il"] = "@loop.inner",
 
-							["ai"] = "@conditional.outer",
-							["ii"] = "@conditional.inner",
+							["ac"] = "@conditional.outer",
+							["ic"] = "@conditional.inner",
 						},
 					},
 				},
