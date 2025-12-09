@@ -65,6 +65,51 @@ return {
 			desc = "Visual selection or word",
 			mode = { "n", "x" },
 		},
+
+		-- LSP Pickers
+		{
+			"gd",
+			function()
+				Snacks.picker.lsp_definitions()
+			end,
+			desc = "Goto Definition",
+		},
+		{
+			"gt",
+			function()
+				Snacks.picker.lsp_type_definitions()
+			end,
+			desc = "Goto Type Definition",
+		},
+		{
+			"gi",
+			function()
+				Snacks.picker.lsp_implementations()
+			end,
+			desc = "Goto implementation",
+		},
+		{
+			"gr",
+			function()
+				Snacks.picker.lsp_references()
+			end,
+			nowait = true,
+			desc = "LSP references",
+		},
+		{
+			"gci",
+			function()
+				Snacks.picker.lsp_incoming_calls()
+			end,
+			desc = "C[a]lls Incoming",
+		},
+		{
+			"gco",
+			function()
+				Snacks.picker.lsp_outgoing_calls()
+			end,
+			desc = "C[a]lls Outgoing",
+		},
 		{
 			"<CR>s",
 			function()
@@ -75,7 +120,7 @@ return {
 		{
 			"<CR><CR>",
 			function()
-				Snacks.picker.diagnostics_buffer()
+				Snacks.picker.diagnostics()
 			end,
 			desc = "LSP Diagnostics Buffer",
 		},

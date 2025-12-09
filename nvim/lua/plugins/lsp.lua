@@ -39,24 +39,12 @@ return {
 				local hover = "[LSP] Hover"
 				local diagnostic_next = "[LSP] Diagnostic next"
 				local diagnostic_prev = "[LSP] Diagnostic previus"
-				local definition = "[LSP] Definition"
-				local type_definition = "[LSP] Type Definition"
-				local implementation = "[LSP] Implementation"
 				local rename = "[LSP] Rename"
 				local code_action = "[LSP] Code Action"
 
 				vim.keymap.set("n", "K", function()
 					vim.lsp.buf.hover()
 				end, { buffer = bufnr, remap = false, desc = hover })
-				vim.keymap.set("n", "gd", function()
-					vim.lsp.buf.definition()
-				end, { buffer = bufnr, remap = false, desc = definition })
-				vim.keymap.set("n", "gt", function()
-					vim.lsp.buf.type_definition()
-				end, { buffer = bufnr, remap = false, desc = type_definition })
-				vim.keymap.set("n", "gi", function()
-					vim.lsp.buf.implementation()
-				end, { buffer = bufnr, remap = false, desc = implementation })
 				vim.keymap.set("n", "<CR>e", function()
 					vim.diagnostic.goto_next({ float = false })
 				end, { buffer = bufnr, remap = false, desc = diagnostic_next })
