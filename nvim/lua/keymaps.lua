@@ -66,8 +66,8 @@ map("v", "(", "<gv", { desc = "[no plugin] Indent left and reselect" })
 map("v", ")", ">gv", { desc = "[no plugin] Indent right and reselect" })
 
 -- Paste without yanking
-map("x", "p", [["_dP]], { desc = "[no plugin] Paste over w/o yanking" })
-map("x", "P", [["_dp]], { desc = "[no plugin] Paste over w/o yanking" })
+map("x", "p", [["_c<C-r>+<Esc>]], { desc = "[no plugin] Paste over w/o yanking" })
+map("x", "P", [["_c<C-r>+<Esc>]], { desc = "[no plugin] Paste over w/o yanking" })
 
 -- exit terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
