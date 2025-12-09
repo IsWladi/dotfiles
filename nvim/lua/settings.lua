@@ -2,7 +2,7 @@ local opt = vim.o
 
 --Configuración general
 
--- opt.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%l %r│%T "
+opt.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%l %r│%T "
 opt.number = true
 opt.relativenumber = true
 opt.mouse = "a"
