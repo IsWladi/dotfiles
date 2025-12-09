@@ -26,6 +26,9 @@ return {
 					"csv",
 					"rust",
 					"nix",
+					"bash",
+					"diff",
+					"markdown_inline",
 				},
 
 				-- Install parsers synchronously (only applied to `ensure_installed`)
@@ -50,9 +53,8 @@ return {
 						enable = true,
 						lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
 						keymaps = {
-							-- You can use the capture groups defined in textobjects.scm
-							["ao"] = "@class.outer",
-							["io"] = "@class.inner",
+							["ac"] = "@class.outer",
+							["ic"] = "@class.inner",
 
 							["af"] = "@function.outer",
 							["if"] = "@function.inner",
@@ -60,9 +62,24 @@ return {
 							["al"] = "@loop.outer",
 							["il"] = "@loop.inner",
 
-							["ac"] = "@conditional.outer",
-							["ic"] = "@conditional.inner",
+							["ai"] = "@conditional.outer",
+							["ii"] = "@conditional.inner",
+
+							["ad"] = "@comment.outer",
+							["id"] = "@comment.inner",
+
+							["aa"] = "@parameter.outer",
+							["ia"] = "@parameter.inner",
 						},
+					},
+				},
+
+				incremental_selection = {
+					enable = true,
+					keymaps = {
+						node_incremental = "<TAB>", -- Tab para expandir (rápido)
+						node_decremental = "<BS>", -- Backspace para reducir
+						scope_incremental = "<S-TAB>",
 					},
 				},
 			})

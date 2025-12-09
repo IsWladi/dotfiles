@@ -12,7 +12,6 @@ return {
 			image = { enabled = true },
 			dim = { enabled = true },
 			indent = { enabled = true },
-			scope = { enabled = true },
 		})
 
 		-- Dim toggle
