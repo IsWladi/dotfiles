@@ -20,6 +20,7 @@ return {
 		vim.g.dbs = {
 			{ name = "local_proyex_api_mul_tablas", url = vim.fn.getenv("PROYEX_DB") },
 			{ name = "Local Proyex Mysql 3307", url = vim.fn.getenv("MY_SQL_3307") },
+			{ name = "Local Proyex Mysql 3308", url = vim.fn.getenv("MY_SQL_3308") },
 		}
 	end,
 }
