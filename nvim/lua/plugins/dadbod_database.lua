@@ -21,6 +21,9 @@ return {
 			{ name = "local_proyex_api_mul_tablas", url = vim.fn.getenv("PROYEX_DB") },
 			{ name = "Local Proyex Mysql 3307", url = vim.fn.getenv("MY_SQL_3307") },
 			{ name = "Local Proyex Mysql 3308", url = vim.fn.getenv("MY_SQL_3308") },
+
+			{ name = "Local Oracle 1523 System", url = vim.fn.getenv("ORACLE_1523_SYSTEM") },
+			{ name = "Local Oracle 1523 BD_SATELITAL_STVL", url = vim.fn.getenv("ORACLE_1523_BD_SATELITAL_STVL") },
 		}
 	end,
 }
