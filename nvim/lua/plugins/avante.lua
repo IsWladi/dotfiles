@@ -12,16 +12,17 @@ return {
 		providers = {
 			openai = {
 				endpoint = "https://api.openai.com/v1",
-				model = "gpt-4.1",
+				model = "gpt-5-mini",
 				timeout = 30000, -- Timeout in milliseconds
 				extra_request_body = {
 					temperature = 0.75,
-					max_tokens = 20480,
+					max_completion_tokens = 128000,
 				},
 			},
 		},
 		behaviour = {
-			enable_token_counting = false, -- Whether to enable token counting. Default to true.
+			enable_token_counting = true, -- Whether to enable token counting. Default to true.
+			auto_approve_tool_permissions = false,
 		},
 		windows = {
 			---@type "right" | "left" | "top" | "bottom"
