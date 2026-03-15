@@ -119,6 +119,7 @@ return {
 			vim.lsp.enable("nil_ls")
 			vim.lsp.enable("pyright")
 			vim.lsp.enable("rust_analyzer")
+			vim.lsp.enable("bashls")
 		end,
 	},
 }
