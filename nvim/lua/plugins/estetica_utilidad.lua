@@ -32,4 +32,9 @@ return {
 
 	--icons
 	{ "nvim-tree/nvim-web-devicons" },
+
+	{
+		"sphamba/smear-cursor.nvim",
+		opts = {},
+	},
 }
