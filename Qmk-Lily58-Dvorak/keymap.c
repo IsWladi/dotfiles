@@ -131,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MAYUS,          TD(TD_TILDE),   TD(TD_MINT),    TD(TD_BIGT),      KC_P,    KC_Y,                                  KC_F,    KC_G,    KC_C,    KC_H,         KC_L,    LSFT_T(KC_LBRC), \
     LSFT_T(KC_TAB), KC_A,           KC_O,           KC_E, LT(_NUMPAD, KC_U),   KC_I,                                  KC_D,    KC_R,    KC_T,    TD(TD_NN),    KC_S,    KC_BSPC, \
     XXXXXXX,        TD(TD_DOTS),    KC_Q,           KC_J,             KC_K,    KC_X, TD(TD_LEFT_K),   TD(TD_RIGHT_K), KC_B,    KC_M,    KC_W,    KC_V,         KC_Z,    KC_RGUI, \
-                                          XXXXXXX, KC_LGUI, LT(_LOWER,KC_SPC),   LALT_T(KC_ESC),         LCTL_T(KC_COMM), LT(_HIGHER,KC_ENT), TD(TD_CORCHETES_K), XXXXXXX \
+                                          KC_LCTL, KC_LGUI, LT(_LOWER,KC_SPC),   LALT_T(KC_ESC),         LCTL_T(KC_COMM), LT(_HIGHER,KC_ENT), TD(TD_CORCHETES_K), XXXXXXX \
                        ),
 
     [_LOWER] = LAYOUT( \
