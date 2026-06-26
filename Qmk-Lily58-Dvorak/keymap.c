@@ -148,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, KC_HOME,     KC_PGUP,     KC_PSCR,      XXXXXXX,      XXXXXXX,                             ROFI,    TOGGLE_FS_I3,     WLEFT_I3,     WRIGHT_I3,   WT, CLOSE_I3, \
     XXXXXXX, TD(TD_SIM8), TD(TD_SIM9), TD(TD_SIM10), TD(TD_EXCLA), TD(TD_SIM12),                        XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, \
     XXXXXXX, XXXXXXX,     XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,       XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-                                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX \
+                                                     XXXXXXX, XXXXXXX, KC_SPC, XXXXXXX,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX \
     ),
 
 
