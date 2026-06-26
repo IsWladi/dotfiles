@@ -114,12 +114,18 @@ return {
 				},
 			})
 
+			vim.lsp.config("gdscript", {
+				capabilities = caps,
+				filetypes = { "gd", "gdscript" },
+			})
+
 			-- enable servers manually managed by nix
 			vim.lsp.enable("lua_ls")
 			vim.lsp.enable("nil_ls")
 			vim.lsp.enable("pyright")
 			vim.lsp.enable("rust_analyzer")
 			vim.lsp.enable("bashls")
+			vim.lsp.enable("gdscript")
 		end,
 	},
 }

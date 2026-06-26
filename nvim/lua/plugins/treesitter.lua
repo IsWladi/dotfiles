@@ -29,6 +29,8 @@ return {
 					"bash",
 					"diff",
 					"markdown_inline",
+					"gdscript",
+					"gdshader",
 				},
 
 				-- Install parsers synchronously (only applied to `ensure_installed`)
