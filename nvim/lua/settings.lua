@@ -3,6 +3,8 @@ local opt = vim.o
 --Configuración general
 
 -- opt.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%l %r│%T "
+opt.title = true
+opt.titlestring = "%t (%{fnamemodify(getcwd(), ':t')})"
 opt.number = true
 opt.relativenumber = true
 opt.mouse = "a"
