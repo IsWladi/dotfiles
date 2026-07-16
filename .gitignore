@@ -3,6 +3,7 @@
 
 # Excepciones: permitir solo estas carpetas
 !.gitignore
+!CLAUDE.md
 !/Qmk-Lily58-Dvorak/
 !nvim/
 !kitty/
