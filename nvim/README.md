@@ -4,46 +4,82 @@
 <a href="https://dotfyle.com/IsWladi/neovim"><img src="https://dotfyle.com/IsWladi/neovim/badges/leaderkey?style=flat" /></a>
 <a href="https://dotfyle.com/IsWladi/neovim"><img src="https://dotfyle.com/IsWladi/neovim/badges/plugin-manager?style=flat" /></a>
 
+## Requirements
+
+- Neovim 0.12+
+- NixOS (some LSP servers are managed via Nix, not Mason)
+- `git`, `curl`, `tar` (for lazy.nvim and parser downloads)
+
 ## Install Instructions
 
-> Install requires Neovim 0.11+. Always review the code before installing a configuration.
+> Always review the code before installing a configuration.
 
-- Download the appimage
+**On NixOS**, install Neovim via nixpkgs and clone the config:
 
-- Run the following commands:
+```sh
+git clone git@github.com:IsWladi/Neovim ~/.config/nvim
+nvim
+```
 
-  ```sh
-  chmod u+x nvim-linux-x86_64.appimage
-  mv nvim-linux-x86_64.appimage /usr/bin/nvim
-  ```
+Plugins install automatically on first launch via **lazy.nvim**. Treesitter parsers install on first launch via `:TSInstall`.
 
-- Clone the repository and install the plugins
-  ```sh
-  git clone git@github.com:IsWladi/Neovim ~/.config/nvim
-  nvim
-  ```
+**On other systems**, install Neovim 0.12+ via your package manager or appimage, then clone as above.
 
-## Chrome extension - Vimium keymaps
+## Key Remaps
+
+Navigation is remapped from `hjkl` to **`rtns`**:
+
+| Key | Action |
+|-----|--------|
+| `r` | Left |
+| `t` | Down |
+| `n` | Up |
+| `s` | Right |
+| `m` / `M` | Next / prev search match (replaces `n` / `N`) |
+
+Leader key: `,` (comma)
+
+## Plugin Highlights
+
+| Plugin | Purpose |
+|--------|---------|
+| **lazy.nvim** | Plugin manager |
+| **nvim-treesitter** (main) | Syntax parsing, Neovim 0.12 compatible |
+| **blink.cmp** | Completion |
+| **snacks.nvim** | Picker (files, grep, LSP symbols) |
+| **harpoon2** | File bookmarks (slots: `<Space>r/t/n/s`) |
+| **oil.nvim** | File manager as buffer (`-`) |
+| **conform.nvim** | Format on save |
+| **neogit** + **diffview** | Git UI |
+| **nvim-dap** | Debugger (Python, Java) |
+| **avante.nvim** | AI assistant |
+| **dadbod** | Database UI |
+
+## LSP Setup
+
+LSP servers are split into two tracks:
+
+- **Mason-managed** (auto-installed): `ts_ls`, `tailwindcss`, `jsonls`, `dockerls`, `yamlls`, `html`, `jdtls`
+- **Nix-managed** (must be on PATH): `lua_ls`, `nil_ls`, `pyright`, `rust_analyzer`, `bashls`, `gdscript`
+
+## Chrome Extension — Vimium Keymaps
 
 ```
-    # Insert your preferred key mappings here.
-    map t scrollDown
-    map n scrollUp
-    map f LinkHints.activateModeToOpenInNewTab
-    map F LinkHints.activateMode
-    map s nextTab
-    map S previousTab
+map t scrollDown
+map n scrollUp
+map f LinkHints.activateModeToOpenInNewTab
+map F LinkHints.activateMode
+map s nextTab
+map S previousTab
 ```
 
 ## Java Spring Boot Debugging
 
-- Execute the API in debug mode:
+```sh
+mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
+```
 
-  ```sh
-  mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
-  ```
-
-- Open the main class of the project to load LSP.
-- Open the Controller class and set breakpoints.
-- Initialize the debug in the main class (if you don't initialize at the main class, the debug will not work).
-- Call the endpoint with the browser or Postman.
+1. Open the main class to load LSP.
+2. Open the Controller class and set breakpoints.
+3. Start DAP from the main class (`<F1>` to toggle DAP UI).
+4. Call the endpoint with the browser or Postman.
