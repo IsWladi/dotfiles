@@ -1,102 +1,75 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		enabled = true,
+		branch = "main",
+		lazy = false,
 		build = ":TSUpdate",
-		event = "VeryLazy",
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter-context",
-			"nvim-treesitter/nvim-treesitter-textobjects",
+			{ "nvim-treesitter/nvim-treesitter-context", branch = "master" },
+			{ "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
 		},
 		config = function()
-			require("nvim-treesitter.configs").setup({
-				-- A list of parser names, or "all"
-				ensure_installed = {
-					"vimdoc",
-					"javascript",
-					"python",
-					"lua",
-					"luadoc",
-					"html",
-					"yaml",
-					"json",
-					"markdown",
-					"regex",
-					"java",
-					"csv",
-					"rust",
-					"nix",
-					"bash",
-					"diff",
-					"markdown_inline",
-					"gdscript",
-					"gdshader",
-				},
+			require("nvim-treesitter").setup({})
+			require("nvim-treesitter").install({
+				"vimdoc",
+				"javascript",
+				"python",
+				"lua",
+				"luadoc",
+				"html",
+				"yaml",
+				"json",
+				"markdown",
+				"regex",
+				"java",
+				"csv",
+				"rust",
+				"nix",
+				"bash",
+				"diff",
+				"markdown_inline",
+				"gdscript",
+				"gdshader",
+			})
 
-				-- Install parsers synchronously (only applied to `ensure_installed`)
-				sync_install = false,
+			-- Enable treesitter highlighting for all filetypes with a parser
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function(args)
+					pcall(vim.treesitter.start, args.buf)
+				end,
+			})
 
-				-- Automatically install missing parsers when entering buffer
-				-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-				auto_install = false,
-
-				highlight = {
-					-- `false` will disable the whole extension
-					enable = true,
-					-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-					-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-					-- Using this option may slow down your editor, and you may see some duplicate highlights.
-					-- Instead of true it can also be a list of languages
-					additional_vim_regex_highlighting = false,
-				},
-				indent = { enable = true },
-				textobjects = {
-					select = {
-						enable = true,
-						lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-						keymaps = {
-							["ac"] = "@class.outer",
-							["ic"] = "@class.inner",
-
-							["af"] = "@function.outer",
-							["if"] = "@function.inner",
-
-							["al"] = "@loop.outer",
-							["il"] = "@loop.inner",
-
-							["ai"] = "@conditional.outer",
-							["ii"] = "@conditional.inner",
-
-							["ad"] = "@comment.outer",
-							["id"] = "@comment.inner",
-
-							["aa"] = "@parameter.outer",
-							["ia"] = "@parameter.inner",
-						},
-					},
-				},
-
-				incremental_selection = {
-					enable = true,
-					keymaps = {
-						node_incremental = "<TAB>", -- Tab para expandir (rápido)
-						node_decremental = "<BS>", -- Backspace para reducir
-						scope_incremental = "<S-TAB>",
-					},
+			require("nvim-treesitter-textobjects").setup({
+				select = {
+					lookahead = true,
 				},
 			})
+
+			local select = require("nvim-treesitter-textobjects.select")
+			local keymaps = {
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner",
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["al"] = "@loop.outer",
+				["il"] = "@loop.inner",
+				["ai"] = "@conditional.outer",
+				["ii"] = "@conditional.inner",
+				["ad"] = "@comment.outer",
+				["id"] = "@comment.inner",
+				["aa"] = "@parameter.outer",
+				["ia"] = "@parameter.inner",
+			}
+			for key, capture in pairs(keymaps) do
+				vim.keymap.set({ "x", "o" }, key, function()
+					select.select_textobject(capture, "textobjects")
+				end)
+			end
 		end,
 	},
 }
 
 --doc
-
---incremental_selection: Este módulo te permite seleccionar partes del código de manera incremental.
---
---init_selection: Este atajo de teclado inicia la selección incremental en la posición actual del cursor. En este caso, se asigna a <c-space>.
---node_incremental: Este atajo de teclado aumenta la selección al siguiente nivel. En este caso, se asigna a <c-space>.
---scope_incremental: Este atajo de teclado aumenta la selección al siguiente nivel de ámbito. En este caso, se asigna a <c-s>.
---node_decremental: Este atajo de teclado disminuye la selección al nivel anterior. En este caso, se asigna a <M-space>.
 
 --textobjects.select: Este módulo te permite seleccionar objetos de texto específicos en tu código.
 --
