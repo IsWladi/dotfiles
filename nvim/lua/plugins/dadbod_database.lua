@@ -30,6 +30,13 @@ return {
 			return prefix .. encoded .. suffix
 		end
 
+		vim.g.db_ui_table_helpers = {
+			mysql = {
+				["Resumen Essbio"] = "USE powerbi;SELECT * FROM `{table}` ORDER BY FechaHora DESC LIMIT 100",
+			},
+		}
+		vim.g.db_ui_auto_execute_table_helpers = 1
+
 		vim.g.dbs = {
 			-- Local
 			{ name = "local_proyex_api_mul_tablas", url = encode_db_url(vim.fn.getenv("PROYEX_DB")) },
@@ -37,7 +44,10 @@ return {
 			{ name = "Local Proyex Mysql 3308", url = encode_db_url(vim.fn.getenv("MY_SQL_3308")) },
 
 			{ name = "Local Oracle 1523 System", url = encode_db_url(vim.fn.getenv("ORACLE_1523_SYSTEM")) },
-			{ name = "Local Oracle 1523 BD_SATELITAL_STVL", url = encode_db_url(vim.fn.getenv("ORACLE_1523_BD_SATELITAL_STVL")) },
+			{
+				name = "Local Oracle 1523 BD_SATELITAL_STVL",
+				url = encode_db_url(vim.fn.getenv("ORACLE_1523_BD_SATELITAL_STVL")),
+			},
 
 			-- Production
 			{ name = "Prod Proyex Windows Mysql", url = encode_db_url(vim.fn.getenv("URL_MYSQL_PROYEX_WINDOWS")) },
