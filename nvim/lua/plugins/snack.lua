@@ -12,6 +12,7 @@ return {
 			image = { enabled = true },
 			dim = { enabled = true },
 			indent = { enabled = true },
+			words = { enabled = true },
 		})
 
 		-- Dim toggle
@@ -138,6 +139,27 @@ return {
 				Snacks.picker.help()
 			end,
 			desc = "Help Pages",
+		},
+		{
+			'<CR>"',
+			function()
+				Snacks.picker.registers()
+			end,
+			desc = "Registers",
+		},
+		{
+			",m",
+			function()
+				Snacks.words.jump(vim.v.count1, true)
+			end,
+			desc = "Next word reference",
+		},
+		{
+			",M",
+			function()
+				Snacks.words.jump(-vim.v.count1, true)
+			end,
+			desc = "Prev word reference",
 		},
 	},
 }

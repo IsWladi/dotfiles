@@ -30,8 +30,8 @@ map("o", "s", "<Right>")
 
 --buffers
 map("n", "<leader>q", "<cmd>q<CR>", { desc = "[no plugin] Exit" }) --salir
-map("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "[no plugin] Delete current buffer" }) --borrar buffer actual
-map("n", "<leader>X", "<cmd>bdelete!<CR>", { desc = "[no plugin] Force delete current buffer" }) --borrar buffer actual
+vim.keymap.set("n", "<leader>x", function() Snacks.bufdelete() end, { desc = "Delete current buffer" })
+vim.keymap.set("n", "<leader>X", function() Snacks.bufdelete({ force = true }) end, { desc = "Force delete current buffer" })
 map("n", "<leader>o", "<cmd>w<CR>", { desc = "[no plugin] Save" }) --guardar
 map("n", "<leader><leader>o", "<cmd>wa<CR>", { desc = "[no plugin] Save all buffers" }) --guardar todos los buffers
 
