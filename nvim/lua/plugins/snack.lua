@@ -126,6 +126,13 @@ return {
 		},
 
 		{
+			"<CR>b",
+			function()
+				Snacks.picker.buffers()
+			end,
+			desc = "Open Buffers",
+		},
+		{
 			"<CR>h",
 			function()
 				Snacks.picker.help()
