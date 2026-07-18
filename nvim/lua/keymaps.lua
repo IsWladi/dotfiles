@@ -34,8 +34,6 @@ map("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "[no plugin] Delete current b
 map("n", "<leader>X", "<cmd>bdelete!<CR>", { desc = "[no plugin] Force delete current buffer" }) --borrar buffer actual
 map("n", "<leader>o", "<cmd>w<CR>", { desc = "[no plugin] Save" }) --guardar
 map("n", "<leader><leader>o", "<cmd>wa<CR>", { desc = "[no plugin] Save all buffers" }) --guardar todos los buffers
-map("n", "<leader>n", "<cmd>bnext<CR>", { desc = "[no plugin] Go to next buffer" })
-map("n", "<leader>t", "<cmd>bprevious<CR>", { desc = "[no plugin] Go to previous buffer" })
 
 -- window management
 -- rezise
@@ -43,13 +41,21 @@ vim.keymap.set("n", "<M-n>", ":resize +2<CR>", { silent = true })
 vim.keymap.set("n", "<M-t>", ":resize -2<CR>", { silent = true })
 vim.keymap.set("n", "<M-r>", ":vertical resize -2<CR>", { silent = true })
 vim.keymap.set("n", "<M-s>", ":vertical resize +2<CR>", { silent = true })
+vim.keymap.set("n", "<M-Up>", ":resize +2<CR>", { silent = true })
+vim.keymap.set("n", "<M-Down>", ":resize -2<CR>", { silent = true })
+vim.keymap.set("n", "<M-Left>", ":vertical resize -2<CR>", { silent = true })
+vim.keymap.set("n", "<M-Right>", ":vertical resize +2<CR>", { silent = true })
 
 -- move between windows
 
-vim.keymap.set("n", "<leader><leader>r", "<C-w>h", { silent = true })
-vim.keymap.set("n", "<leader><leader>s", "<C-w>l", { silent = true })
-vim.keymap.set("n", "<leader><leader>n", "<C-w>k", { silent = true })
-vim.keymap.set("n", "<leader><leader>t", "<C-w>j", { silent = true })
+vim.keymap.set("n", "<leader>r", "<C-w>h", { silent = true, desc = "Window left" })
+vim.keymap.set("n", "<leader>s", "<C-w>l", { silent = true, desc = "Window right" })
+vim.keymap.set("n", "<leader>n", "<C-w>k", { silent = true, desc = "Window up" })
+vim.keymap.set("n", "<leader>t", "<C-w>j", { silent = true, desc = "Window down" })
+vim.keymap.set("n", "<C-Left>", "<C-w>h", { silent = true })
+vim.keymap.set("n", "<C-Right>", "<C-w>l", { silent = true })
+vim.keymap.set("n", "<C-Up>", "<C-w>k", { silent = true })
+vim.keymap.set("n", "<C-Down>", "<C-w>j", { silent = true })
 
 --para normal mode y visual mode, sustituciones con very very magic y posición de cursor automatica
 map("n", "<leader>/", [[:%s/\v//gc<Left><Left><Left><Left>]], { desc = "[no plugin] Substitute (very magic, confirm)" })
