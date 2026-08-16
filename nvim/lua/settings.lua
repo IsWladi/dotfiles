@@ -25,6 +25,7 @@ opt.hlsearch = true --resaltado de busqueda con /palabra
 opt.incsearch = true --resaltado de busqueda mientras se escribe con h1search false
 opt.colorcolumn = "120" --columna de marco para no exceder largo de linea
 opt.undofile = true
+opt.exrc = true --carga config local por proyecto (.nvim.lua) con confirmación :trust
 local home = os.getenv("HOME") or os.getenv("USERPROFILE")
 opt.undodir = home .. "/.vim/undodir"
 vim.opt.laststatus = 3 -- recomendacion plugin Avante.nvim
