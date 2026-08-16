@@ -103,7 +103,10 @@ return {
 				capabilities = require("blink.cmp").get_lsp_capabilities(),
 				settings = {
 					["rust-analyzer"] = {
-						cargo = { allFeatures = true },
+						-- No forzar allFeatures: en proyectos con features
+						-- mutuamente excluyentes (p.ej. mysql/oracle) activaría
+						-- ambas y dispararía compile_error!. Las features por
+						-- proyecto se eligen vía rust-analyzer.toml.
 						checkOnSave = true,
 						check = {
 							command = "clippy",
