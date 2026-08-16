@@ -33,7 +33,7 @@ return {
 		{
 			"<CR>f",
 			function()
-				Snacks.picker.files({ hidden = true })
+				Snacks.picker.files({ hidden = true, ignored = true })
 			end,
 			desc = "Find Files",
 		},
