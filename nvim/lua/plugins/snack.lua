@@ -33,14 +33,14 @@ return {
 		{
 			"<CR>f",
 			function()
-				Snacks.picker.files({ hidden = true, ignored = true })
+				Snacks.picker.files({ hidden = false, ignored = false })
 			end,
 			desc = "Find Files",
 		},
 		{
 			"<CR>g",
 			function()
-				Snacks.picker.grep({ hidden = true })
+				Snacks.picker.grep({ hidden = false })
 			end,
 			desc = "Grep",
 		},

@@ -7,7 +7,7 @@ return {
 		require("oil").setup({
 			view_options = {
 				-- Show files and directories that start with "."
-				show_hidden = true,
+				show_hidden = false,
 			},
 			-- Se fusionan con los keymaps por defecto de oil.
 			keymaps = {
