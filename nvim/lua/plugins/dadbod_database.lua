@@ -39,10 +39,7 @@ return {
 
 		vim.g.dbs = {
 			-- Local
-			{ name = "local_proyex_api_mul_tablas", url = encode_db_url(vim.fn.getenv("PROYEX_DB")) },
-			{ name = "Local Proyex Mysql 3307", url = encode_db_url(vim.fn.getenv("MY_SQL_3307")) },
-			{ name = "Local Proyex Mysql 3308", url = encode_db_url(vim.fn.getenv("MY_SQL_3308")) },
-
+			{ name = "MySQL custom env", url = encode_db_url(vim.fn.getenv("MY_SQL_GENERICO")) },
 			{ name = "Local Oracle 1523 System", url = encode_db_url(vim.fn.getenv("ORACLE_1523_SYSTEM")) },
 			{
 				name = "Local Oracle 1523 BD_SATELITAL_STVL",
