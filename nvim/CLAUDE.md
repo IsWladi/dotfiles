@@ -32,7 +32,7 @@ Leader is `,` (comma).
 
 ### LSP Setup (Two-Track)
 - **Mason-managed** (auto-installed): `ts_ls`, `tailwindcss`, `jsonls`, `dockerls`, `yamlls`, `html`, `jdtls`
-- **Nix-managed** (binaries on PATH, enabled manually): `lua_ls`, `nil_ls`, `pyright`, `rust_analyzer`, `bashls`, `gdscript`
+- **Nix-managed** (binaries on PATH, enabled manually): `lua_ls`, `nil_ls`, `pyright`, `rust_analyzer`, `bashls`, `gdscript`, `tinymist`
 
 When adding a new LSP server, decide which track it belongs to and configure accordingly in `lua/plugins/lsp.lua`.
 

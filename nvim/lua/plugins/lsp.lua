@@ -120,7 +120,15 @@ return {
 				filetypes = { "gd", "gdscript" },
 			})
 
+			vim.lsp.config("tinymist", {
+				cmd = { "tinymist" },
+				settings = {
+					formatterMode = "typstyle", -- typstyle viene integrado en tinymist
+				},
+			})
+
 			-- enable servers manually managed by nix
+			vim.lsp.enable("tinymist")
 			vim.lsp.enable("lua_ls")
 			vim.lsp.enable("nil_ls")
 			vim.lsp.enable("pyright")
